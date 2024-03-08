@@ -1,0 +1,28 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+
+    <!-- Configuration des propriétés de connexion à la base de données -->
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hibernatedemo</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password"></property>
+
+        <!-- Configuration du dialecte de base de données -->
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+
+        <!-- Activation des logs SQL -->
+        <property name="hibernate.show_sql">true</property>
+        <property name="hibernate.format_sql">true</property>
+
+        <!-- auto creation and update of each tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Configuration du mapping des classes -->
+        <mapping class="org.example.entities.Employee" />
+        <mapping class="org.example.entities.Departement" />
+
+    </session-factory>
+</hibernate-configuration>
